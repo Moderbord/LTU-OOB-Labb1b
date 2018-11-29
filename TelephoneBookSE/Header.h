@@ -7,7 +7,6 @@
 #include <iterator>
 
 namespace {
-
 	using std::vector;
 	using std::string;
 	using std::map;
