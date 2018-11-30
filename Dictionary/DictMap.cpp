@@ -7,13 +7,6 @@ DictMap::DictMap()
 {
 	map <string, string> dict;
 
-	dict["Drake"] = "asd";
-	dict["Alliza"] = "Best EU player";
-	dict["Skog"] = "Mange trad";
-	dict["Sparkles"] = "Shiny and effective";
-
-	dict.insert(pair<string, string>("Hej", "då"));
-
 	while (true)
 	{
 		cout << "===================" << endl;
@@ -33,7 +26,8 @@ DictMap::DictMap()
 			cin >> word;
 			
 			cout << "Description of word: ";
-			cin >> desc;
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');		// safer way to ignore '\n' in the buffer
+			getline(cin, desc);
 
 			insert(word, desc, dict);
 			break;

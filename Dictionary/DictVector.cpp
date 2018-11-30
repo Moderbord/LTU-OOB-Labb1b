@@ -60,7 +60,8 @@ void insert(string s, vector<string> &key, vector<string> &value)
 	string desc;
 
 	cout << "Enter a description: ";
-	cin >> desc;
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');		// safer way to ignore '\n' in the buffer
+	getline(cin, desc);
 
 	key.push_back(s);
 	value.push_back(desc);
